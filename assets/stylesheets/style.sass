@@ -1,0 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700)
+@import url(http://fonts.googleapis.com/css?family=Allura)
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400)
+
+@import compass/css3
+
+*
+  +box-sizing(border-box)
+  padding: 0
+  margin: 0
+
+html, body
+  height: 100%
+
+$dark: rgb(58, 53, 32)
+
+body
+  +background(radial-gradient(white, #F7F2D3))
+  max-width: 960px
+  padding: 60px
+  margin: 0 auto
+  text-align: center
+
+@mixin lato
+  font: 300 28px Lato
+  line-height: 1.5
+  color: #666
+
+h1, h2, h3
+  font-family: Montserrat
+  text-shadow: 0 1px 0 rgba(white, 0.2), -3px 5px 4px rgba(black, 0.1), 3px 5px 4px rgba(black, 0.1)
+  font-size: 3.77em
+
+h1
+  text-transform: uppercase
+h3
+  font-size: 2.5em
+  color: $dark
+
+.profile
+  p
+    font-weight: 400
+  .image
+    background-image: url('/images/profile_image_80.png')
+    width: 80px
+    height: 80px
+    display: inline-block
+    margin-top: 10px
+    border-radius: 40px
+    box-shadow: 0 0 1px 1px #AAA, 0 0 2px 3px rgba(black, 0.5)
+
+p
+  +lato
+
+p.sub
+  font: normal 32px Allura
+  color: #777
+
+img.poster
+  box-shadow: 0 0 1px rgba($dark, 1), 0 0 0px 8px white, 0 0 0px 9px rgba($dark, 0.1), 10px 10px 20px 3px rgba(black, 0.2), -10px 10px 20px 3px rgba(black, 0.2)
+  margin: 30px
+
+a.cta
+  display: inline-block
+  +lato
+  font-weight: 400
+  background-color: $dark
+  color: #EEE
+  padding: 10px 20px
+  +border-radius(4px)
+  text-decoration: none
+  +box-shadow(10px 10px 20px 3px rgba(black, 0.2), -10px 10px 20px 3px rgba(black, 0.2))
+
+hr
+  height: 0
+  border-top: 1px solid rgba($dark, 0.5)
+  border-bottom: none
+  width: 80%
+  margin: 40px auto
+
+ul
+  text-align: left
+  margin-top: 20px
+
+li
+  +lato
+  display: block
+  padding: 6px 10px 6px 20px
+  border-left: 5px solid rgba(58, 53, 32, 0.9)
+  &::before
+    content: '✔'
+    position: absolute
+    margin-left: -70px
+
+p.bio
+  text-align: left
+  margin-top: 40px
+
+a
+  color: $dark
+  text-decoration: none
+  border-bottom: 1px dotted $dark
+  &:hover
+    color: lighten($dark, 40%)
